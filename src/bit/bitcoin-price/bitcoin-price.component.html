@@ -1,0 +1,56 @@
+<!-- <div>
+    <h2>Bitcoin Price</h2>
+    <p>Amount: {{ data.amount }}</p>
+    <p>Base: {{ data.base }}</p>
+    <p>Currency: {{ data.currency }}</p>
+  </div>
+
+<h4>Select Currency</h4>
+<mat-form-field>
+  <mat-label>Currency</mat-label>
+  <mat-select [(ngModel)]="selectedCurrency" (selectionChange)="onCurrencyChange()">
+    <mat-option *ngFor="let currency of Currencies" [value]="currency.value">
+      {{ currency.viewValue }}
+    </mat-option>
+  </mat-select>
+</mat-form-field> -->
+
+<div class="bottom-bar">
+  <h2>Price of Cryptocurrencies in Different type of Currency</h2>
+</div>
+
+<div class="container">
+<div class="top-bar">
+  <h2>Select Type of Currency:</h2>
+  <div class="currency-selector">
+    <mat-form-field appearance="fill">
+      <mat-label>Currency</mat-label>
+      <mat-select [(ngModel)]="selectedCurrency" (selectionChange)="onCurrencyChange()">
+        <mat-option *ngFor="let currency of Currencies" [value]="currency.value">
+          {{ currency.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+
+<div class="top-bar">
+  <h2>Select Type of Crypto Currency:</h2>
+  <div class="currency-selector">
+    <mat-form-field appearance="fill">
+      <mat-label>Crypto Currency</mat-label>
+      <mat-select [(ngModel)]="selectedCrypto" (selectionChange)="onCurrencyChange()">
+        <mat-option *ngFor="let Crypto of Cryptos" [value]="Crypto.value">
+          {{ Crypto.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+
+<div class="price-info">
+  <p><span class="label">Selected Currency:</span> {{ data.currency }}</p>
+  <p><span class="label">Selected Crypto Currency:</span> {{ data.base }}</p>
+  <p><span class="label">Price of {{ data.base }} in {{ data.currency }}:</span> {{ data.amount }}</p>
+</div>
+</div>
